@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmileCare Dental Clinic | Chandigarh</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --teal: #0d7377;
+    --teal-light: #14a085;
+    --gold: #c9a84c;
+    --cream: #faf8f4;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10,22,40,0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    letter-spacing: 0.5px;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-weight: 500 !important;
+    transition: opacity 0.2s !important;
+  }
+
+  .nav-cta:hover { opacity: 0.85; color: var(--navy) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(13,115,119,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: 30%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-left { position: relative; z-index: 2; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+
+  .hero h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 440px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    animation: fadeUp 0.6s ease 0.3s both;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover {
+    background: var(--teal-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: white; }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    animation: fadeUp 0.6s ease 0.4s both;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .stat-num span { color: var(--gold); }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease 0.3s both;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 40px;
+    width: 360px;
+    backdrop-filter: blur(20px);
+  }
+
+  .hero-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  .time-slots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .slot {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+
+  .slot:hover, .slot.active {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: white;
+  }
+
+  .slot.active { border-color: var(--gold); }
+
+  .book-btn {
+    width: 100%;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .book-btn:hover { opacity: 0.9; }
+
+  .card-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 12px;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--white);
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .trust-label {
+    font-size: 0.75rem;
+    color: var(--gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .trust-items {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .trust-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.6rem;
+  }
+
+  /* SERVICES */
+  .section {
+    padding: 100px 60px;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 500px;
+    font-weight: 300;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 32px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: rgba(13,115,119,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .service-price {
+    margin-top: 20px;
+    font-size: 0.82rem;
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  /* WHY US */
+  .why-section {
+    background: var(--navy);
+    padding: 100px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .why-left .section-title { color: white; }
+  .why-left .section-sub { color: rgba(255,255,255,0.5); }
+
+  .why-points {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .why-point {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .why-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    font-weight: 600;
+    min-width: 28px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .why-text-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .why-text-desc {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    background: var(--light-gray);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+    color: var(--navy);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+  }
+
+  .author-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .author-loc {
+    font-size: 0.75rem;
+    color: var(--gray);
+    margin-top: 2px;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--cream);
+    padding: 100px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-info-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: rgba(13,115,119,0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-info-label {
+    font-size: 0.75rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .contact-info-value {
+    font-size: 0.95rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .contact-form {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+
+  .form-group { margin-bottom: 16px; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--gray);
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    color: var(--navy);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--teal);
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--teal);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover { background: var(--teal-light); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: white;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-text {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* WHATSAPP */
+  .wa-btn {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    background: #25d366;
+    color: white;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 200;
+    transition: transform 0.2s;
+  }
+
+  .wa-btn:hover { transform: scale(1.08); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 100px 20px 60px; gap: 40px; }
+    .hero-right { display: none; }
+    .section { padding: 60px 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-section { grid-template-columns: 1fr; padding: 60px 20px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .contact-section { grid-template-columns: 1fr; padding: 60px 20px; }
+    .trust-bar { padding: 16px 20px; flex-wrap: wrap; gap: 16px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 30px 20px; }
+    .hero-stats { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Smile<span>Care</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Chandigarh's Trusted Dental Care</div>
+    <h1>Your Smile<br>Deserves <em>Expert</em><br>Care</h1>
+    <p class="hero-sub">Advanced dental treatments in a calm, comfortable environment. No unnecessary procedures. No hidden costs. Just honest care for your teeth.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">📅 Book Free Consultation</a>
+      <a href="tel:+911234567890" class="btn-ghost">📞 Call Now →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">12<span>+</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">4800<span>+</span></div>
+        <div class="stat-label">Happy Patients</div>
+      </div>
+      <div>
+        <div class="stat-num">4.9<span>★</span></div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-title">Book a Slot Today</div>
+      <div class="time-slots">
+        <div class="slot active" onclick="selectSlot(this)">10:00 AM</div>
+        <div class="slot" onclick="selectSlot(this)">11:30 AM</div>
+        <div class="slot" onclick="selectSlot(this)">2:00 PM</div>
+        <div class="slot" onclick="selectSlot(this)">4:00 PM</div>
+        <div class="slot" onclick="selectSlot(this)">5:30 PM</div>
+        <div class="slot" onclick="selectSlot(this)">7:00 PM</div>
+      </div>
+      <button class="book-btn">Confirm Appointment →</button>
+      <p class="card-note">📍 Sector 22, Chandigarh &nbsp;|&nbsp; Free parking</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-label">Certified by</span>
+  <div class="trust-items">
+    <div class="trust-item"><div class="trust-icon">✓</div> Indian Dental Association</div>
+    <div class="trust-item"><div class="trust-icon">✓</div> ISO 9001:2015 Certified</div>
+    <div class="trust-item"><div class="trust-icon">✓</div> Digital X-Ray Technology</div>
+    <div class="trust-item"><div class="trust-icon">✓</div> Sterilized Equipment</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-tag">What We Offer</div>
+  <div class="section-title">Treatments Built<br>Around You</div>
+  <p class="section-sub">Every treatment plan is personalised. We explain every step before we proceed — no surprises.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🦷</div>
+      <div class="service-name">General Dentistry</div>
+      <div class="service-desc">Routine checkups, cleanings, fillings, and extractions handled with precision and minimal discomfort.</div>
+      <div class="service-price">Starting ₹500 →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <div class="service-name">Teeth Whitening</div>
+      <div class="service-desc">Professional-grade whitening that delivers visible results in a single session. Safe for sensitive teeth.</div>
+      <div class="service-price">Starting ₹3,500 →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <div class="service-name">Orthodontics</div>
+      <div class="service-desc">Braces and clear aligners for all ages. Straighten your smile without compromising your daily life.</div>
+      <div class="service-price">Starting ₹18,000 →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏥</div>
+      <div class="service-name">Root Canal</div>
+      <div class="service-desc">Pain-free root canal therapy using rotary endodontics. Most procedures completed in one visit.</div>
+      <div class="service-price">Starting ₹4,500 →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💎</div>
+      <div class="service-name">Dental Implants</div>
+      <div class="service-desc">Permanent tooth replacement that looks, feels, and functions like a natural tooth. Lifetime guarantee.</div>
+      <div class="service-price">Starting ₹25,000 →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">👶</div>
+      <div class="service-name">Paediatric Dentistry</div>
+      <div class="service-desc">Gentle, child-friendly dental care. We make first visits fun so kids grow up unafraid of the dentist.</div>
+      <div class="service-price">Starting ₹300 →</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="why">
+  <div class="why-left">
+    <div class="section-tag" style="color: var(--gold);">Why SmileCare</div>
+    <div class="section-title">We Do Things<br>Differently</div>
+    <p class="section-sub">Most clinics rush you in and out. We don't. Every appointment gets the time it needs.</p>
+    <div class="why-points">
+      <div class="why-point">
+        <div class="why-num">01</div>
+        <div>
+          <div class="why-text-title">Honest Diagnosis First</div>
+          <div class="why-text-desc">We tell you exactly what you need — and what you don't. No upselling, no unnecessary procedures.</div>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-num">02</div>
+        <div>
+          <div class="why-text-title">Fixed Pricing, Always</div>
+          <div class="why-text-desc">You know the full cost before we start. Zero hidden charges. EMI options available.</div>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-num">03</div>
+        <div>
+          <div class="why-text-title">Latest Equipment</div>
+          <div class="why-text-desc">Digital X-rays, laser dentistry, and sterilization protocols that meet international standards.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 48px; display: flex; flex-direction: column; gap: 28px;">
+    <div style="text-align: center; padding: 28px; background: rgba(201,168,76,0.08); border-radius: 12px; border: 1px solid rgba(201,168,76,0.2);">
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--gold); font-weight: 600;">4.9</div>
+      <div style="color: var(--gold); font-size: 1.1rem; margin: 4px 0;">★★★★★</div>
+      <div style="color: rgba(255,255,255,0.4); font-size: 0.8rem;">Based on 340+ Google Reviews</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="color: rgba(255,255,255,0.5); font-size: 0.82rem;">Cleanliness</span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 120px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;"><div style="width: 98%; height: 100%; background: var(--teal); border-radius: 2px;"></div></div>
+          <span style="color: white; font-size: 0.8rem;">9.8</span>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="color: rgba(255,255,255,0.5); font-size: 0.82rem;">Staff Behaviour</span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 120px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;"><div style="width: 96%; height: 100%; background: var(--teal); border-radius: 2px;"></div></div>
+          <span style="color: white; font-size: 0.8rem;">9.6</span>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="color: rgba(255,255,255,0.5); font-size: 0.82rem;">Value for Money</span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 120px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;"><div style="width: 94%; height: 100%; background: var(--teal); border-radius: 2px;"></div></div>
+          <span style="color: white; font-size: 0.8rem;">9.4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials" id="reviews">
+  <div class="section-tag">Patient Stories</div>
+  <div class="section-title">Real People,<br>Real Results</div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"I was terrified of dentists for 10 years. The team here was so patient with me. Got my root canal done with zero pain. I couldn't believe it."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background: var(--teal);">RK</div>
+        <div>
+          <div class="author-name">Rajesh Kumar</div>
+          <div class="author-loc">Sector 35, Chandigarh</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Got my braces here. 14 months and the results are incredible. The staff tracks your progress seriously and never rushes you."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background: var(--gold);">PS</div>
+        <div>
+          <div class="author-name">Priya Sharma</div>
+          <div class="author-loc">Mohali, Phase 7</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Brought my 6-year-old daughter here. She actually wants to come back. That says everything about how good they are with kids."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background: #8b5cf6;">AM</div>
+        <div>
+          <div class="author-name">Anjali Mehta</div>
+          <div class="author-loc">Panchkula, Sector 11</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div>
+    <div class="section-tag">Get In Touch</div>
+    <div class="section-title">Visit Us or<br>Book Online</div>
+    <p class="section-sub" style="margin-bottom: 40px;">Walk-ins welcome. Appointments get priority. Evening slots available Mon–Sat.</p>
+
+    <div class="contact-info-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-info-label">Address</div>
+        <div class="contact-info-value">SCO 142, Sector 22-C<br>Chandigarh, 160022</div>
+      </div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-info-label">Phone</div>
+        <div class="contact-info-value">+91 98765 43210</div>
+      </div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-icon">🕐</div>
+      <div>
+        <div class="contact-info-label">Hours</div>
+        <div class="contact-info-value">Mon – Sat: 10 AM – 8 PM<br>Sunday: 10 AM – 2 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <div class="form-title">Book Appointment</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Amit Singh">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+91 98765 43210">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Service Needed</label>
+      <select>
+        <option>General Checkup</option>
+        <option>Teeth Whitening</option>
+        <option>Braces / Aligners</option>
+        <option>Root Canal</option>
+        <option>Dental Implant</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Preferred Date</label>
+      <input type="date">
+    </div>
+    <button class="submit-btn" onclick="alert('Thank you! We will call you to confirm your appointment.')">Confirm Booking →</button>
+    <p style="font-size: 0.75rem; color: var(--gray); margin-top: 12px; text-align: center;">🔒 We never share your details. Expect a call within 2 hours.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Smile<span>Care</span> Dental</div>
+  <div class="footer-text">© 2025 SmileCare Dental Clinic, Chandigarh. All rights reserved.</div>
+  <div class="footer-text">Designed with ❤️ for healthy smiles</div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919876543210" class="wa-btn" title="Chat on WhatsApp">💬</a>
+
+<script>
+  function selectSlot(el) {
+    document.querySelectorAll('.slot').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .testimonial-card, .why-point').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
